@@ -1,0 +1,27 @@
+{
+   "name": "Pravda",
+   "description": "See news through a different lens",
+   "version": "1.0",
+   "manifest_version": 3,
+   "action": {},
+   "permissions": [
+      "activeTab",
+      "scripting"
+   ],
+   "content_scripts": [
+      {
+        "matches": ["https://www.bbc.com/news/*"],
+        "css": ["css/main.css"],
+        "js": ["content.js"]
+      }
+    ],
+   "background": {
+      "service_worker": "service-worker.js"
+   },
+   "web_accessible_resources": [
+      {
+         "resources": ["/rsc/*"],
+         "matches": ["https://www.bbc.com/*"]
+      }
+   ]
+}
